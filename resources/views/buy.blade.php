@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #4B4B4C;
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -81,21 +81,19 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Buy Spaceships!
+                    Checkout your orders here
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Search Spaceships</a>
-                    <a href="https://laracasts.com">Buy Spaceships</a>
-                    <a href="https://laravel-news.com">Clear Cart</a>
-                    <a href="https://laravel-news.com">Main Menu</a>
-                  <!--  <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
+                <a href="/" accesskey="1" title="">Main Menu</a>
+                <a href="search" accesskey="2" title="">Search</a>
+                <a href="clear" accesskey="4" title="">Clear</a>
                 </div>
+                </br>
+                <input id="submit" type="submit" value="Confirm">
             </div>
         </div>
+
+        
     </body>
 </html>

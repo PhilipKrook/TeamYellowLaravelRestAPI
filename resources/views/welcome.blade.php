@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #4B4B4C;
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -60,6 +60,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: white;
             }
         </style>
     </head>
@@ -81,19 +82,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Our awesome Spaceship-app!
+                    Welcome to the spaceshipshop!
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Search Spaceships</a>
-                    <a href="https://laracasts.com">Buy Spaceships</a>
-                    <a href="https://laravel-news.com">Clear Cart</a>
-                  <!--  <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
-                </div>
+                    <a href="search" accesskey="2" title="">To the spaceships</a>
+                    <a href="buy" accesskey="3" title="">Shopping Cart</a>
+                    </div>
             </div>
         </div>
     </body>
