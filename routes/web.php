@@ -15,9 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/search', function () {
-    return view('search');
+
+    $ships = DB::table('Ships')->get();
+
+    return view('search', ['ships' => $ships]);
 });
+
 
 Route::get('/buy', function () {
     return view('buy');

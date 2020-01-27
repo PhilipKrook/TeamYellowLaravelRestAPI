@@ -12,12 +12,13 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #4B4B4C;
+                color: #C6C6C6;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                
             }
 
             .full-height {
@@ -56,10 +57,12 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                
             }
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: white;
             }
         </style>
     </head>
@@ -83,14 +86,55 @@
                 <div class="title m-b-md">
                     Search for spaceships here!
                 </div>
-
                 <div class="links">
-                <a href="https://laravel.com/docs">Search Spaceships</a>
-                    <a href="https://laracasts.com">Buy Spaceships</a>
-                    <a href="https://laravel-news.com">Clear Cart</a>
-                    <a href="https://laravel-news.com">Main Menu</a>
-                </div>
+                    <a href="/" accesskey="1" title="">Main Menu</a>
+                    <a href="search" accesskey="2" title=""><u></u></a>
+                    <a href="buy" accesskey="3" title="">Shopping Cart</a>
+                    </div>
+                <div class="table-responsive">
+  <table class="table table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th><strong><u>Name</u></strong></th>
+        <th><strong><u>Origin</u></strong></th>
+        <th><strong><u>Class</u></strong></th>
+        <th><strong><u>Price (SpaceCoins)</u></strong></th>
+      </tr>
+      </br>
+    </thead>
+    <tbody>
+    @foreach($ships as $key => $data)
+    <tr>    
+      <th>{{$data->shipName}}</th>
+      <th>{{$data->shipOrigin}}</th>
+      <th>{{$data->shipClass}}</th>
+      <th>{{$data->shipPrice}}</th>
+                     
+    </tr>
+@endforeach
+    
+    
+    </tbody>
+  </table>
+</div>
+
+</br>
+<!-- TESTAR EN SÖKFUNKTION MOT DB -->
+<form action="/search" method="POST" role="search">
+    {{ csrf_field() }}
+    <div class="input-group">
+        <input type="text" class="form-control" name="q"
+            placeholder="Starwars,Startrek ect"> <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</form>
             </div>
         </div>
+
+
+        
     </body>
 </html>
