@@ -7,16 +7,22 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function show($slug)
-    {
-        $ships = \DB::table('ships')->where('slug', $slug)->first();
+
+    public function index(Request $request){
+
+        
+        $search = $request->input('search');
+
+        $ships = \DB::table('Ships')->where('shipOrigin', $search)->get();
+        
         
 
 
 
-
-        return view('search', [
-            'ships' => $ships
+        return view('result', [
+            'Ships' => $ships
             ]);
+        
+        
     }
 }

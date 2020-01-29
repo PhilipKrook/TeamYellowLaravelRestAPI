@@ -84,7 +84,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Search for spaceships here!
+                    Result-page
                 </div>
                 <div class="links">
                     <a href="/" accesskey="1" title="">Main Menu</a>
@@ -93,14 +93,28 @@
                     </div>
                 <div class="table-responsive">
   <table class="table table-striped table-hover table-condensed">
+  <thead>
+      <tr>
+        <th><strong><u>Name</u></strong></th>
+        <th><strong><u>Origin</u></strong></th>
+        <th><strong><u>Class</u></strong></th>
+        <th><strong><u>Price (SpaceCoins)</u></strong></th>
+        <th><strong><u>Add amount</u></strong></th>
+      </tr>
+      </br>
+    </thead>
+    <tbody>
     
-  </table>
+    
+    
+    </tbody>
+    
 </div>
 
 </br>
 <!-- TESTAR EN SÖKFUNKTION MOT DB -->
-<form method="POST" action="/result">
-@csrf
+<form method="GET" action="/result">
+
 <div class="row">
 
     <div class="col-md-6">
@@ -118,25 +132,25 @@
 </div>
 
 </form>
-<form method="GET" action="/result">
 
-<div class="row">
+<form action="/buy">
+@foreach($Ships as $Ship)
+    <tr>    
+      <th>{{$Ship->shipName}}</th>
+      <th>{{$Ship->shipOrigin}}</th>
+      <th>{{$Ship->shipClass}}</th>
+      <th>{{$Ship->shipPrice}}</th>
+      <th>
+     
 
-    <div class="col-md-6">
-
-        
-
-    </div>
-
-    <div class="col-md-6">
-
-        <button class="btn btn-success">List All</button>
-
-    </div>
-
-</div>
-
-</form>
+<input type="checkbox" value="{{$Ship->shipId}}" method="POST">
+</th>
+                     
+    </tr>
+@endforeach
+ 
+  <input type="submit" value="Confirm Order">
+</form> 
             </div>
         </div>
 
