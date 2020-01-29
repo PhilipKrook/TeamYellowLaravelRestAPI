@@ -32,6 +32,7 @@ Route::get('/result', function () {
 
 
 Route::post('/result', 'SearchController@index'); 
+Route::post('/listall', 'SearchController@listAll'); 
 
 
 

@@ -105,7 +105,7 @@
 
     <div class="col-md-6">
 
-        <input type="text" name="search" class="form-control" placeholder="Search">
+        <input type="text" name="search" class="form-control" placeholder="Starwars,Startrek ect..">
 
     </div>
 
@@ -118,7 +118,9 @@
 </div>
 
 </form>
-<form method="GET" action="/result">
+
+<form method="POST" action="/listall">
+@csrf
 
 <div class="row">
 
