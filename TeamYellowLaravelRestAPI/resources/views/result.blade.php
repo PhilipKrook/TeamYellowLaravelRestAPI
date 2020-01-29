@@ -104,19 +104,7 @@
       </br>
     </thead>
     <tbody>
-    @foreach($ships as $shipSearch => $data)
-    <tr>    
-      <th>{{$data->shipName}}</th>
-      <th>{{$data->shipOrigin}}</th>
-      <th>{{$data->shipClass}}</th>
-      <th>{{$data->shipPrice}}</th>
-      <th>
-     
-
-<input name="$shipName" type="checkbox" value="1" method="POST">
-                     
-    </tr>
-@endforeach
+    
     
     
     </tbody>
@@ -144,6 +132,25 @@
 </div>
 
 </form>
+
+<form action="/buy">
+@foreach($Ships as $Ship)
+    <tr>    
+      <th>{{$Ship->shipName}}</th>
+      <th>{{$Ship->shipOrigin}}</th>
+      <th>{{$Ship->shipClass}}</th>
+      <th>{{$Ship->shipPrice}}</th>
+      <th>
+     
+
+<input type="checkbox" value="{{$Ship->shipId}}" method="POST">
+</th>
+                     
+    </tr>
+@endforeach
+ 
+  <input type="submit" value="Confirm Order">
+</form> 
             </div>
         </div>
 

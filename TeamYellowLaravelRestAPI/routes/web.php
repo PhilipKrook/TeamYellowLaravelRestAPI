@@ -24,10 +24,15 @@ Route::get('/search', function () {
 
 Route::get('/result', function () {
 
-    $ships = DB::table('Ships')->get();
+    //$ships = DB::table('Ships')->get();
 
-    return view('result', ['ships' => $ships]);
+    //return view('result', ['ships' => $ships]);
 });
+
+
+
+Route::post('/result', 'SearchController@index'); 
+
 
 
 

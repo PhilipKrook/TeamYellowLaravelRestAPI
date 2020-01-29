@@ -99,8 +99,8 @@
 
 </br>
 <!-- TESTAR EN SÖKFUNKTION MOT DB -->
-<form method="GET" action="/result">
-
+<form method="POST" action="/result">
+@csrf
 <div class="row">
 
     <div class="col-md-6">
