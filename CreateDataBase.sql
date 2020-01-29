@@ -25,10 +25,9 @@ CREATE TABLE Ships
     ('Millennium Falcon',  'Starwars', 'Battleship', '700'),
     ('X-wing',  'Starwars', 'Battleship', '700');
 
-
     CREATE TABLE Buy
     (
         shipId INT,
         shipAmmount CHAR(100),
         FOREIGN KEY (shipId) REFERENCES Ships(shipId)
-    );<
+    );
