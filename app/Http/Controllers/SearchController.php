@@ -25,4 +25,10 @@ class SearchController extends Controller
         
         
     }
+
+    public function listAll() {
+        $Ships = \DB::table('Ships')->get();
+
+        return view('listall', ['Ships' => $Ships]);
+    }
 }

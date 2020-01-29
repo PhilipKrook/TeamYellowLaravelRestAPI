@@ -84,7 +84,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Result-page
+                    Listall-page
                 </div>
                 <div class="links">
                     <a href="/" accesskey="1" title="">Main Menu</a>
