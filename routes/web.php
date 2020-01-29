@@ -17,11 +17,23 @@ Route::get('/', function () {
 
 
 Route::get('/search', function () {
+    return view('search');
 
-    $ships = DB::table('Ships')->get();
-
-    return view('search', ['ships' => $ships]);
+    
 });
+
+Route::get('/result', function () {
+
+    //$ships = DB::table('Ships')->get();
+
+    //return view('result', ['ships' => $ships]);
+});
+
+
+
+Route::post('/result', 'SearchController@index'); 
+
+
 
 
 Route::get('/buy', function () {
