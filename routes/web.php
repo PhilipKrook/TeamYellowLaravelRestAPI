@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('/search', function () {
     return view('search');
+
     
 });
 
@@ -28,15 +29,17 @@ Route::get('/result', function () {
     //return view('result', ['ships' => $ships]);
 });
 
+
+
+
 Route::post('/result', 'SearchController@index'); 
 Route::post('/listall', 'SearchController@listAll'); 
-Route::post('/buy', 'SearchController@getResult');
-Route::post('/getResult', 'searchController@getResult');
+Route::post('/clear', 'SearchController@clear');
+Route::get('/buy', 'SearchController@getResult'); 
 
-Route::get('/buy', function () {
-    echo "HEEELLOOOOO";
-    return view('buy');    
-});
+
+
+
 
 Route::get('/clear', function () {
     return view('clear');

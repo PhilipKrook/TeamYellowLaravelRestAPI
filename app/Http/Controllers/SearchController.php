@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,30 +8,67 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
 
-    public function index(Request $request) {
+    public function index(Request $request){
+
         
         $search = $request->input('search');
-        $ships = \DB::table('Ships')->where('shipOrigin', $search)->get();
 
-        echo "ABCD";
-        return view('result', ['Ships' => $ships]);    
+        $ships = \DB::table('Ships')->where('shipOrigin', $search)->get();
+        
+        
+
+
+
+        return view('result', ['Ships' => $ships]);
+        
+        
     }
 
     public function listAll() {
         $Ships = \DB::table('Ships')->get();
 
-        echo "12345";
         return view('listall', ['Ships' => $Ships]);
     }
 
+
+    
+
     public function getResult(Request $request) {
 
-        $results = $requests->getshipid;
+        $results = $request->input('getshipid');
 
-        echo $results;
-        echo $getResult;
-        echo $getshipid;
-        echo "6789";
-        return view('buy');
+        $sum = 0;
+
+        foreach($results as $result) {
+            $list = (explode(" ", $result));
+            $id = $list[0];
+            $shipName = $list[1];
+            $shipOrigin = $list[2];
+            $shipClass = $list[3];
+            $price = $list[4];
+            $sum = $sum + $price;
+
+            $map = [
+                'id' => $id,
+                'shipName' => $shipName,
+                'shipOrigin' => $shipOrigin,
+                'klass' => $shipClass,
+                'price' => $price
+            ];
+            $mapArray[] = $map;
+        }
+        
+        return view('buy', ['ships' => $mapArray, 'sum' => $sum]);
+        
     }
+
+    public function clear() {
+        unset($mapArray);
+        unset($sum);
+
+        return view('clear');
+    }
+    
 }
+    
+

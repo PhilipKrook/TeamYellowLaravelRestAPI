@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -63,6 +63,10 @@
             .m-b-md {
                 margin-bottom: 30px;
                 color: white;
+            }
+
+            a:hover {
+                color: #636b6f;
             }
         </style>
     </head>
@@ -84,12 +88,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Search for spaceships here!
+                    Search for spaceships here
                 </div>
                 <div class="links">
                     <a href="/" accesskey="1" title="">Main Menu</a>
-                    <a href="search" accesskey="2" title=""><u></u></a>
-                    <a href="buy" accesskey="3" title="">Shopping Cart</a>
                     </div>
                 <div class="table-responsive">
   <table class="table table-striped table-hover table-condensed">
@@ -97,52 +99,24 @@
   </table>
 </div>
 
-</br>
-<!-- TESTAR EN SÖKFUNKTION MOT DB -->
+
+
+<!-- SÖKFUNKTIONEN -->
+<div class="flex-center">
 <form method="POST" action="/result">
 @csrf
-<div class="row">
+    <input 
+    type="text" name="search" class="" placeholder="Starwars,Startrek ect..">
 
-    <div class="col-md-6">
-
-        <input type="text" name="search" class="form-control" placeholder="Starwars,Startrek ect..">
-
-    </div>
-
-    <div class="col-md-6">
-
-        <button class="btn btn-success">Search</button>
-
-    </div>
-
-</div>
-
+    <button>Search</button>
 </form>
 
 <form method="POST" action="/listall">
 @csrf
 
-<div class="row">
-
-    <div class="col-md-6">
-
-        
-
-    </div>
-
-    <div class="col-md-6">
-
-        <button class="btn btn-success">List All</button>
-
-    </div>
-
-</div>
-
+<button>List All</button>
 </form>
-            </div>
-        </div>
-
-
-        
+</div>
+            
     </body>
 </html>

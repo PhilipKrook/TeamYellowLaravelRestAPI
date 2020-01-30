@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -63,6 +63,10 @@
             .m-b-md {
                 margin-bottom: 30px;
                 color: white;
+            }
+
+            a:hover {
+                color: #636b6f;
             }
         </style>
     </head>
@@ -88,8 +92,7 @@
                 </div>
                 <div class="links">
                     <a href="/" accesskey="1" title="">Main Menu</a>
-                    <a href="search" accesskey="2" title=""><u></u></a>
-                    <a href="buy" accesskey="3" title="">Shopping Cart</a>
+                    
                     </div>
                 <div class="table-responsive">
   <table class="table table-striped table-hover table-condensed">
@@ -103,38 +106,50 @@
       </tr>
       </br>
     </thead>
-    <tbody>    
+    <tbody>
+    
+    
+    
     </tbody>
     
 </div>
 
-</br>
+
 <!-- TESTAR EN SÖKFUNKTION MOT DB -->
 <form method="POST" action="/result">
 @csrf
-<div class="row">
-    <div class="col-md-6">
-        <input type="text" name="search" class="form-control" placeholder="Starwars,Startrek ect..">
-    </div>
-    <div class="col-md-6">
-        <button class="btn btn-success">Search</button>
-    </div>
-</div>
+
+    <input type="text" name="search" class="form-control" placeholder="Starwars,Startrek ect..">
+
+    <button class="btn btn-success">Search</button>
+
 </form>
-<form action="/buy">
+
+
+<form name="getResult" action="/buy">
+@csrf
 @foreach($Ships as $Ship)
+
     <tr>    
       <th>{{$Ship->shipName}}</th>
       <th>{{$Ship->shipOrigin}}</th>
       <th>{{$Ship->shipClass}}</th>
       <th>{{$Ship->shipPrice}}</th>
-      <th><input type="checkbox" name="getshipid[]" value="{{$Ship->shipId}}" method="POST"></th>                     
+      <th>
+    
+
+<input type="checkbox" name="getshipid[]" value="{{$Ship->shipId}} {{$Ship->shipName}} {{$Ship->shipOrigin}} {{$Ship->shipClass}} {{$Ship->shipPrice}}">
+</th>
+                     
     </tr>
 @endforeach
  
   <input type="submit" value="Confirm Order">
 </form> 
+            </div>
         </div>
-        </div>        
+
+
+        
     </body>
 </html>
