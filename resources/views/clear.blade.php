@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -60,6 +60,10 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+
+            a:hover {
+                color: #636b6f;
             }
         </style>
     </head>
@@ -81,14 +85,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Display a clear-cart message here.
+                    Your order has been canceled
                 </div>
 
                 <div class="links">
                 <a href="/" accesskey="1" title="">Main Menu</a>
-                <a href="search" accesskey="2" title="">Search</a>
-                <a href="buy" accesskey="3" title="">Buy</a>
-                <a href="clear" accesskey="4" title=""><u>Clear</u></a>
+                
                 </div>
             </div>
         </div>

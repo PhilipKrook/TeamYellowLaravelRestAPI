@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -62,6 +62,10 @@
                 margin-bottom: 30px;
                 color: white;
             }
+
+            a:hover {
+                color: #636b6f;
+}
         </style>
     </head>
     <body>
@@ -82,12 +86,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome to the spaceshipshop!
+                    Welcome to the spaceshipstore!
                 </div>
 
                 <div class="links">
                     <a href="search" accesskey="2" title="">To the spaceships</a>
-                    <a href="buy" accesskey="3" title="">Shopping Cart</a>
+                    
                     </div>
             </div>
         </div>

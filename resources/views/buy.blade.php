@@ -13,11 +13,12 @@
         <style>
             html, body {
                 background-color: #4B4B4C;
-                color: white;
+                color: #C6C6C6;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                
             }
 
             .full-height {
@@ -49,17 +50,26 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                
             }
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: white;
+            }
+
+            a:hover {
+                color: #636b6f;
+            }
+            th {
+                margin: 30px;
             }
         </style>
     </head>
@@ -81,17 +91,57 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Checkout your orders here
+                    Your order has been sent!
                 </div>
-
                 <div class="links">
-                <a href="/" accesskey="1" title="">Main Menu</a>
-                <a href="search" accesskey="2" title="">Search</a>
-                <a href="clear" accesskey="4" title="">Clear</a>
-                </div>
-                </br>
-                <input id="submit" type="submit" value="Confirm">
+                    <a href="/" accesskey="1" title="">Main Menu</a>
+                    <a href="clear" accesskey="2" title="">Cancel Order</a>
+                    <a href="buy" accesskey="3" title=""></a>
+                    </div>
+                <div class="table-responsive">
+  <table class="table table-striped table-hover table-condensed">
+  <thead>
+      <tr>
+        <th><strong><u>Id</u></strong></th>
+        <th><strong><u>Name</u></strong></th>
+        <th><strong><u>Origin</u></strong></th>
+        <th><strong><u>Class</u></strong></th>
+        <th><strong><u>Price(Spacecoins)</u></strong></th>
+      </tr>
+      </br>
+    </thead>
+    <tbody>
+    
+    
+    
+    </tbody>
+    
+</div>
+
+
+@foreach($ships as $ship)
+
+    <tr>    
+      <th>{{$ship['id']}}</th>
+      <th>{{$ship['shipName']}}</th>
+      <th>{{$ship['shipOrigin']}}</th>
+      <th>{{$ship['klass']}}</th>
+      <th>{{$ship['price']}}</th>
+      <th>
+    
+
+
+</th>
+                     
+    </tr>
+@endforeach
+
+<tr><th> <h3>Total cost: {{$sum}}</h3></th></tr>
+
+  
+
             </div>
-        </div>        
+        </div>
+</form>        
     </body>
 </html>
