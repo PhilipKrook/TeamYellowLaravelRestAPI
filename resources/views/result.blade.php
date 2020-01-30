@@ -103,10 +103,7 @@
       </tr>
       </br>
     </thead>
-    <tbody>
-    
-    
-    
+    <tbody>    
     </tbody>
     
 </div>
@@ -116,23 +113,14 @@
 <form method="POST" action="/result">
 @csrf
 <div class="row">
-
     <div class="col-md-6">
-
         <input type="text" name="search" class="form-control" placeholder="Starwars,Startrek ect..">
-
     </div>
-
     <div class="col-md-6">
-
         <button class="btn btn-success">Search</button>
-
     </div>
-
 </div>
-
 </form>
-
 <form action="/buy">
 @foreach($Ships as $Ship)
     <tr>    
@@ -140,21 +128,13 @@
       <th>{{$Ship->shipOrigin}}</th>
       <th>{{$Ship->shipClass}}</th>
       <th>{{$Ship->shipPrice}}</th>
-      <th>
-     
-
-<input type="checkbox" value="{{$Ship->shipId}}" method="POST">
-</th>
-                     
+      <th><input type="checkbox" name="getshipid[]" value="{{$Ship->shipId}}" method="POST"></th>                     
     </tr>
 @endforeach
  
   <input type="submit" value="Confirm Order">
 </form> 
-            </div>
         </div>
-
-
-        
+        </div>        
     </body>
 </html>

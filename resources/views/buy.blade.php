@@ -92,8 +92,6 @@
                 </br>
                 <input id="submit" type="submit" value="Confirm">
             </div>
-        </div>
-
-        
+        </div>        
     </body>
 </html>
