@@ -72,32 +72,21 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+            
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+            <!-- Här sätter vi rubriken på sidan "Search for spaceships here" -->
             <div class="content">
                 <div class="title m-b-md">
                     Search for spaceships here
                 </div>
+
+            <!-- Här visar vi sidans alla länkar -->
                 <div class="links">
                     <a href="/" accesskey="1" title="">Main Menu</a>
                     </div>
-                <div class="table-responsive">
-  <table class="table table-striped table-hover table-condensed">
-    
-  </table>
-</div>
+
+
+
 
 
 
@@ -107,13 +96,11 @@
 @csrf
     <input 
     type="text" name="search" class="" placeholder="Starwars,Startrek ect..">
-
-    <button>Search</button>
+<button>Search</button>
 </form>
 
 <form method="POST" action="/listall">
 @csrf
-
 <button>List All</button>
 </form>
 </div>
