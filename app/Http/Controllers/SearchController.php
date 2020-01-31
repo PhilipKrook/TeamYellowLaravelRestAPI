@@ -1,39 +1,31 @@
 <?php
 
-
+/* Denna controller skapades med hjälp utav "php artisan make:controller NamnPåController */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-
+    /*  */
     public function index(Request $request){
 
-        
         $search = $request->input('search');
-
         $ships = \DB::table('Ships')->where('shipOrigin', $search)->get();
         
-        
-
-
-
         return view('result', ['Ships' => $ships]);
-        
-        
     }
 
+    /* Funktion som plockar ut all data från table "Ships" och
+       retunerar dessa till vyn "listall.blade.php".*/
     public function listAll() {
         $Ships = \DB::table('Ships')->get();
 
         return view('listall', ['Ships' => $Ships]);
     }
 
-
-    
-
-    public function getResult(Request $request) {
+    /* */
+     public function getResult(Request $request) {
 
         $results = $request->input('getshipid');
 
@@ -61,7 +53,7 @@ class SearchController extends Controller
         return view('buy', ['ships' => $mapArray, 'sum' => $sum]);
         
     }
-
+    /* Funktion som nollställer "$mapArray + $sum" */ 
     public function clear() {
         unset($mapArray);
         unset($sum);

@@ -75,24 +75,15 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+            
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+            <!-- Här sätter vi rubriken på sidan "Welcome to the spaceshipstore" -->
             <div class="content">
                 <div class="title m-b-md">
                     Your order has been sent!
                 </div>
+
+            <!-- Här visar vi sidans alla länkar -->
                 <div class="links">
                     <a href="/" accesskey="1" title="">Main Menu</a>
                     <a href="clear" accesskey="2" title="">Cancel Order</a>
@@ -135,7 +126,7 @@
                      
     </tr>
 @endforeach
-
+<!-- Visar den totala summan av alla skepp -->
 <tr><th> <h3>Total cost: {{$sum}}</h3></th></tr>
 
   

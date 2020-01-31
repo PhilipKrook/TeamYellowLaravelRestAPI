@@ -11,27 +11,25 @@
 |
 */
 
+
+/* När path:en är "/" så retuneras vyn "welcome.blade.php"*/
 Route::get('/', function () {
     return view('welcome');
 });
 
-
+/* När path:en är "/search" så retuneras vyn "search.blade.php"*/
 Route::get('/search', function () {
     return view('search');
-
-    
 });
 
-Route::get('/result', function () {
-
-    //$ships = DB::table('Ships')->get();
-
-    //return view('result', ['ships' => $ships]);
+/* När path:en är "/clear" så retuneras vyn "clear.blade.php"*/
+Route::get('/clear', function () {
+    return view('clear');
 });
 
-
-
-
+/* När path:en är till exempel "/result" så används controllern "SearchController" 
+   och @index indikerar på att den ska använda sig av funktionen index som finns i
+   SearchControllern. */
 Route::post('/result', 'SearchController@index'); 
 Route::post('/listall', 'SearchController@listAll'); 
 Route::post('/clear', 'SearchController@clear');
@@ -41,6 +39,3 @@ Route::get('/buy', 'SearchController@getResult');
 
 
 
-Route::get('/clear', function () {
-    return view('clear');
-});
