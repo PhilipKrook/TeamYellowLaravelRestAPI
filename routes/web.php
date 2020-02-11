@@ -27,6 +27,9 @@ Route::get('/clear', function () {
     return view('clear');
 });
 
+Route::get('/weather', function () {
+    return view('weather');
+});
 /* När path:en är till exempel "/result" så används controllern "SearchController" 
    och @index indikerar på att den ska använda sig av funktionen index som finns i
    SearchControllern. */

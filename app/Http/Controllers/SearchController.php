@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    /*  */
-    public function index(Request $request){
+    /* Testa en LIKE-funktion så man kan söka på enstaka ord */
+    public function index(Request $request) {
 
         $search = $request->input('search');
         $ships = \DB::table('Ships')->where('shipOrigin', $search)->get();
@@ -24,8 +24,8 @@ class SearchController extends Controller
         return view('listall', ['Ships' => $Ships]);
     }
 
-    /* */
-     public function getResult(Request $request) {
+    /*  */
+    public function getResult(Request $request) {
 
         $results = $request->input('getshipid');
 
