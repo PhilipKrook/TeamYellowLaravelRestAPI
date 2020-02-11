@@ -2,9 +2,9 @@ DROP DATABASE IF EXISTS yellowstore;
 CREATE DATABASE yellowstore;
 USE yellowstore;
 
-CREATE TABLE Ships
+CREATE TABLE ships
 (
-    shipId INT NOT NULL
+    id INT NOT NULL
     AUTO_INCREMENT,
     shipName CHAR
     (100) NOT NULL,
@@ -15,9 +15,9 @@ CREATE TABLE Ships
     shipPrice VARCHAR
     (100) NOT NULL,
     PRIMARY KEY
-    (shipId)
+    (id)
 );
-    INSERT INTO Ships
+    INSERT INTO ships
         (shipName, shipOrigin, shipClass, shipPrice)
     VALUES
         ('Enteprise-1', 'Startrek', 'Galaxy', '666'),
@@ -35,7 +35,7 @@ CREATE TABLE Ships
 
     CREATE TABLE Buy
     (
-        shipId INT,
+        id INT,
         shipAmmount CHAR(100),
-        FOREIGN KEY (shipId) REFERENCES Ships(shipId)
+        FOREIGN KEY (id) REFERENCES ships(id)
     );
