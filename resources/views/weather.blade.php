@@ -74,7 +74,7 @@
 
 .container {
   margin-top: -300px;
-  text-align: left;
+  text-align: center;
 }
 
 .weather {

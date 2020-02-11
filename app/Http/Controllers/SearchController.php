@@ -11,17 +11,17 @@ class SearchController extends Controller
     public function index(Request $request) {
 
         $search = $request->input('search');
-        $ships = \DB::table('Ships')->where('shipOrigin', $search)->get();
+        $ships = \DB::table('ships')->where('shipOrigin', $search)->get();
         
-        return view('result', ['Ships' => $ships]);
+        return view('result', ['ships' => $ships]);
     }
 
     /* Funktion som plockar ut all data från table "Ships" och
        retunerar dessa till vyn "listall.blade.php".*/
     public function listAll() {
-        $Ships = \DB::table('Ships')->get();
+        $ships = \DB::table('ships')->get();
 
-        return view('listall', ['Ships' => $Ships]);
+        return view('listall', ['ships' => $ships]);
     }
 
     /*  */
@@ -49,6 +49,7 @@ class SearchController extends Controller
             ];
             $mapArray[] = $map;
         }
+        var_dump($map);
         
         return view('buy', ['ships' => $mapArray, 'sum' => $sum]);
         

@@ -112,17 +112,17 @@
 
 <form name="getResult" action="/buy">
 @csrf
-@foreach($Ships as $Ship)
+@foreach($ships as $ship)
 
     <tr>    
-      <th>{{$Ship->shipName}}</th>
-      <th>{{$Ship->shipOrigin}}</th>
-      <th>{{$Ship->shipClass}}</th>
-      <th>{{$Ship->shipPrice}}</th>
+      <th>{{$ship->shipName}}</th>
+      <th>{{$ship->shipOrigin}}</th>
+      <th>{{$ship->shipClass}}</th>
+      <th>{{$ship->shipPrice}}</th>
       <th>
     
 
-<input type="checkbox" name="getshipid[]" value="{{$Ship->shipId}} {{$Ship->shipName}} {{$Ship->shipOrigin}} {{$Ship->shipClass}} {{$Ship->shipPrice}}">
+<input type="checkbox" name="getshipid[]" value="{{$ship->id}} {{$ship->shipName}} {{$ship->shipOrigin}} {{$ship->shipClass}} {{$ship->shipPrice}}">
 </th>
                      
     </tr>
