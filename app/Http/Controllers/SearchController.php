@@ -28,30 +28,22 @@ class SearchController extends Controller
     public function getResult(Request $request) {
 
         $results = $request->input('getshipid');
-
+        $new = $request->input('getResults');
         $sum = 0;
-
-        foreach($results as $result) {
-            $list = (explode(" ", $result));
-            $id = $list[0];
-            $shipName = $list[1];
-            $shipOrigin = $list[2];
-            $shipClass = $list[3];
-            $price = $list[4];
-            $sum = $sum + $price;
-
-            $map = [
-                'id' => $id,
-                'shipName' => $shipName,
-                'shipOrigin' => $shipOrigin,
-                'klass' => $shipClass,
-                'price' => $price
-            ];
-            $mapArray[] = $map;
+       
+       foreach ($results as $result) {
+        $resultArray[] = \DB::table('ships')->where('id', $result)->get();
         }
-        var_dump($map);
         
-        return view('buy', ['ships' => $mapArray, 'sum' => $sum]);
+        $newArray = json_decode(json_encode($resultArray), true);
+        $ships = call_user_func_array('array_merge', $newArray);
+        
+
+        foreach ($ships as $ship) {
+            $sum = $sum + (int)$ship['shipPrice'];
+        }
+        
+        return view('buy', ['ships' => $ships, 'sum' => $sum]);
         
     }
     /* Funktion som nollställer "$mapArray + $sum" */ 

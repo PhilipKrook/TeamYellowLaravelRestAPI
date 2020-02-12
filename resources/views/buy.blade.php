@@ -116,8 +116,8 @@
       <th>{{$ship['id']}}</th>
       <th>{{$ship['shipName']}}</th>
       <th>{{$ship['shipOrigin']}}</th>
-      <th>{{$ship['klass']}}</th>
-      <th>{{$ship['price']}}</th>
+      <th>{{$ship['shipClass']}}</th>
+      <th>{{$ship['shipPrice']}}</th>
       <th>
     
 

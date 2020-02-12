@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ship extends Model
 {
-    protected $table = 'ships';
+   
     public $timestamps = false;
 }
