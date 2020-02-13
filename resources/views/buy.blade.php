@@ -113,11 +113,11 @@
 @foreach($ships as $ship)
 
     <tr>    
-      <th>{{$ship['id']}}</th>
-      <th>{{$ship['shipName']}}</th>
-      <th>{{$ship['shipOrigin']}}</th>
-      <th>{{$ship['shipClass']}}</th>
-      <th>{{$ship['shipPrice']}}</th>
+      <th>{{$ship->id}}</th>
+      <th>{{$ship->shipName}}</th>
+      <th>{{$ship->shipOrigin}}</th>
+      <th>{{$ship->shipClass}}</th>
+  
       <th>
     
 
@@ -127,7 +127,7 @@
     </tr>
 @endforeach
 <!-- Visar den totala summan av alla skepp -->
-<tr><th> <h3>Total cost: {{$sum}}</h3></th></tr>
+<tr><th> <h3>Total cost: {{$sum ?? ''}}</h3></th></tr>
 
   
 
